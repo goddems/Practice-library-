@@ -1,26 +1,42 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Author } from './entities/author.entity';
 import { CreateAuthorDto } from './dto/create-author.dto';
 import { UpdateAuthorDto } from './dto/update-author.dto';
 
 @Injectable()
 export class AuthorsService {
-  create(createAuthorDto: CreateAuthorDto) {
-    return 'This action adds a new author';
+  private authors: Author[] = [];
+  private idCounter = 1;
+
+  create(createAuthorDto: CreateAuthorDto): Author {
+    const author: Author = {
+      id: this.idCounter++,
+      ...createAuthorDto,
+    };
+    this.authors.push(author);
+    return author;
   }
 
-  findAll() {
-    return `This action returns all authors`;
+  findAll(): Author[] {
+    return this.authors;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} author`;
+  findOne(id: number): Author {
+    const author = this.authors.find(item => item.id === id);
+    if (!author) throw new NotFoundException('Author not found');
+    return author;
   }
 
-  update(id: number, updateAuthorDto: UpdateAuthorDto) {
-    return `This action updates a #${id} author`;
+  update(id: number, updateAuthorDto: UpdateAuthorDto): Author {
+    const author = this.findOne(id);
+    Object.assign(author, updateAuthorDto);
+    return author;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} author`;
+    const index = this.authors.findIndex(item => item.id === id);
+    if (index === -1) throw new NotFoundException('Author not found');
+    this.authors.splice(index, 1);
+    return { message: 'Deleted' };
   }
 }
