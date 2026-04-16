@@ -7,7 +7,10 @@ import {
   Param,
   Delete,
   ParseIntPipe,
+<<<<<<< HEAD
   Query,
+=======
+>>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
 } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
@@ -20,6 +23,11 @@ export class BooksController {
   @Get()
   getAll(@Query('category') category?: string) {
     return this.booksService.findAll(category);
+  }
+
+  @Get(':id')
+  getOne(@Param('id', ParseIntPipe) id: number) {
+    return this.booksService.findOne(id);
   }
 
   @Get(':id')

@@ -5,6 +5,7 @@ import { UpdateBookDto } from './dto/update-book.dto';
 
 @Injectable()
 export class BooksService {
+<<<<<<< HEAD
   private books: Book[] = [
     { id: 1, title: 'Дюна', author: 'Френк Герберт', category: 'Sci-Fi', description: 'Епічна науково-фантастична сага, що розповідає про пустельну планету Арракіс, відому як Дюна. Юний Пол Атрейдес стає спадкоємцем герцогського роду і потрапляє у вир політичних інтриг. Книга поєднує глибокі екологічні та політичні теми з захоплюючим сюжетом.', price: 250, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/3/e/3ec97f0b-3000-11e7-80c5-000c29ae1566_2d2fca36-de18-11ee-8194-00505684ea69.jpg' },
     { id: 2, title: '1984', author: 'Джордж Орвелл', category: 'Fiction', description: 'Антиутопічний роман, що зображує тоталітарне суспільство майбутнього. Головний герой Вінстон Сміт працює у Міністерстві правди. Роман є попередженням про небезпеку тоталітаризму та маніпуляції свідомістю.', price: 180, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/c/f/cfa051db-74e0-11e6-80be-000c29ae1566_3727b395-a703-11ed-817c-0050568ef5e6.jpg' },
@@ -48,6 +49,10 @@ export class BooksService {
     { id: 40, title: 'Собака Баскервілів', author: 'Артур Конан Дойл', category: 'Mystery', description: 'Класичний детектив з Шерлоком Холмсом. Про легенду про чудовисько на болоті. Класика жанру.', price: 165, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/3/0/30968af0-e2d8-11ef-81b7-005056857596_3542c76e-e2d9-11ef-81b7-005056857596.jpg' },
   ];
   private idCounter = 41;
+=======
+  private books: Book[] = [];
+  private idCounter = 1;
+>>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
 
   findAll(category?: string): Book[] {
     if (category) {
@@ -70,12 +75,21 @@ export class BooksService {
 
   update(id: number, data: UpdateBookDto): Book {
     const book = this.findOne(id);
+<<<<<<< HEAD
     // Оновлюємо тільки ті поля, які передані
     if (data.title) book.title = data.title;
     if (data.author) book.author = data.author;
     if (data.category) book.category = data.category;
     if (data.description) book.description = data.description;
     if (data.price) book.price = data.price;
+=======
+    
+    // Оновлюємо тільки ті поля, які передані
+    if (data.title) book.title = data.title;
+    if (data.description) book.description = data.description;
+    if (data.price) book.price = data.price;
+    
+>>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
     return book;
   }
 

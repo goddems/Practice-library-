@@ -20,6 +20,7 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/books/1
 
+<<<<<<< HEAD
 ###
 GET http://localhost:3000/books/999
 ###
@@ -29,3 +30,6 @@ Content-Type: application/json
 {
   "title": 123
 }
+=======
+
+>>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b

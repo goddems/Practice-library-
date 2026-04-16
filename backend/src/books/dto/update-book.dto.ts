@@ -7,6 +7,7 @@ export class UpdateBookDto {
   title?: string;
 
   @IsOptional()
+<<<<<<< HEAD
   @IsString({ message: 'Author must be a string' })
   author?: string;
 
@@ -15,6 +16,8 @@ export class UpdateBookDto {
   category?: string;
 
   @IsOptional()
+=======
+>>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
   @IsString({ message: 'Description must be a string' })
   description?: string;
 
@@ -22,8 +25,11 @@ export class UpdateBookDto {
   @Type(() => Number)
   @IsNumber({}, { message: 'Price must be a number' })
   price?: number;
+<<<<<<< HEAD
 
   @IsOptional()
   @IsString({ message: 'Image URL must be a string' })
   imageUrl?: string;
+=======
+>>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
 }
