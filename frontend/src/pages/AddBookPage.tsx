@@ -9,9 +9,9 @@ const bookSchema = z.object({
   title: z.string().min(1, 'Назва обов\'язкова').min(2, 'Мінімум 2 символи'),
   author: z.string().min(1, 'Автор обов\'язковий').min(2, 'Мінімум 2 символи'),
   price: z.number().min(1, 'Ціна повинна бути більше 0'),
-  description: z.string().optional(),
+  description: z.string().min(0).default(''),
   category: z.string().min(1, 'Оберіть категорію'),
-  imageUrl: z.string().optional(),
+  imageUrl: z.string().optional().default(''),
 })
 
 type BookFormData = z.infer<typeof bookSchema>
@@ -66,13 +66,30 @@ export default function AddBookPage() {
   const onSubmit = async (data: BookFormData) => {
     try {
       const bookData = {
-        ...data,
+        title: data.title,
+        author: data.author,
+        price: data.price,
+        category: data.category,
+        description: data.description || '',
         imageUrl: imagePreview || '',
       }
-      await axios.post('http://localhost:3000/books', bookData)
+      console.log('Submitting book data:', bookData)
+      const response = await axios.post('http://localhost:3000/books', bookData, {
+        headers: { 'Content-Type': 'application/json' }
+      })
+      console.log('Success:', response.data)
       navigate('/books')
-    } catch (error) {
-      console.error('Error creating book:', error)
+    } catch (error: any) {
+      console.error('Full error:', error)
+      if (error.response) {
+        console.error('Response data:', error.response.data)
+        console.error('Response status:', error.response.status)
+        alert(`Помилка: ${error.response.status} - ${JSON.stringify(error.response.data)}`)
+      } else if (error.request) {
+        alert('Сервер не відповідає. Перевірте, чи запущений бекенд.')
+      } else {
+        alert('Помилка: ' + error.message)
+      }
     }
   }
 

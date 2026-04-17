@@ -5,7 +5,6 @@ import { UpdateBookDto } from './dto/update-book.dto';
 
 @Injectable()
 export class BooksService {
-<<<<<<< HEAD
   private books: Book[] = [
     { id: 1, title: 'Дюна', author: 'Френк Герберт', category: 'Sci-Fi', description: 'Епічна науково-фантастична сага, що розповідає про пустельну планету Арракіс, відому як Дюна. Юний Пол Атрейдес стає спадкоємцем герцогського роду і потрапляє у вир політичних інтриг. Книга поєднує глибокі екологічні та політичні теми з захоплюючим сюжетом.', price: 250, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/3/e/3ec97f0b-3000-11e7-80c5-000c29ae1566_2d2fca36-de18-11ee-8194-00505684ea69.jpg' },
     { id: 2, title: '1984', author: 'Джордж Орвелл', category: 'Fiction', description: 'Антиутопічний роман, що зображує тоталітарне суспільство майбутнього. Головний герой Вінстон Сміт працює у Міністерстві правди. Роман є попередженням про небезпеку тоталітаризму та маніпуляції свідомістю.', price: 180, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/c/f/cfa051db-74e0-11e6-80be-000c29ae1566_3727b395-a703-11ed-817c-0050568ef5e6.jpg' },
@@ -14,8 +13,8 @@ export class BooksService {
     { id: 5, title: 'Гобіт, або Туди і звідти', author: 'Дж. Р. Р. Толкін', category: 'Fantasy', description: 'Казкова повість про Більбо Торбина, який опиняється в компанії гномів у поході за втраченим королівством. Знаходить магічне кільце.', price: 220, imageUrl: 'https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/2/1/21_3_43.jpg' },
     { id: 6, title: 'Володар Перснів: Братство Персня', author: 'Дж. Р. Р. Толкін', category: 'Fantasy', description: 'Епічна фентезі-трилогія про боротьбу ��ар��дів Середземля проти темного владики Саурона. Хоббіт Фродо отримує шанс перемогти зло.', price: 350, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/7/d/7dcde957-819f-11e6-80c0-000c29ae1566_fbd9d961-4f88-11ed-8175-0050568ef5e6.jpg' },
     { id: 7, title: 'Гаррі Поттер і філософський камінь', author: 'Дж. К. Ролінґ', category: 'Fantasy', description: 'Перша книга про юного чарівника Гаррі Поттера, який дізнається про своє походження і потрапляє до школи чарівництва Хогвартс.', price: 230, imageUrl: 'https://reading.in.ua/wp-content/uploads/2024/07/harri-potter-i-filosofskyy-kamin-dzhoan-roling-min.jpg' },
-{ id: 8, title: 'Ловець у житі', author: 'Джером Девід Селінджер', category: 'Fiction', description: 'Розповідь від імені підлітка Холдена Колфілда про його пригоди в Нью-Йорку після виключення зі школи. Книга є класикою.', price: 160, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/f/5/f5ceae7c-496e-11ed-8175-0050568ef5e6_e3b299bf-4971-11ed-8175-0050568ef5e6.jpg' },
-    { id: 9, title: 'Убити пересмішника', author: 'Гарпер Лі', category: 'Classic', description: 'Роман про юного Скаута Фінч та її батька Адвоката Фінча, який захищає чорношкірого чоловіка, несправедливо звинуваченого. Про расову несправедливість.', price: 175, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/d/6/d6684450-80d8-11e6-80c0-000c29ae1566_06b22a67-85a7-11eb-814a-0050568ef5e6.jpg' },
+    { id: 8, title: 'Ловець у житі', author: 'Джером Девід Селінджер', category: 'Fiction', description: 'Розповідь від імені підлітка Холдена Колфілда про його пригоди в Нью-Йорку після виключення зі школи. Книга є класикою.', price: 160, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/f/5/f5ceae7c-496e-11ed-8175-0050568ef5e6_e3b299bf-4971-11ed-8175-0050568ef5e6.jpg' },
+    { id: 9, title: 'Убити пересмішника', author: 'Гарпер Лі', category: 'Classic', description: 'Роман про юного Скаута Фінча та її батька Адвоката Фінча, який захищає чорношкірого чоловіка, несправедливо звинуваченого. Про расову несправедливість.', price: 175, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/d/6/d6684450-80d8-11e6-80c0-000c29ae1566_06b22a67-85a7-11eb-814a-0050568ef5e6.jpg' },
     { id: 10, title: 'Великий Гетсбі', author: 'Френсіс Скотт Фіцджеральд', category: 'Classic', description: 'Роман про таємничого мільйонера Джея Гетсбі, який влаштує пишні бенкети в надії привернути увагу своєї колишньої коханої. Про американську мрію.', price: 150, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/3/1/31f6e583-8315-11eb-814a-0050568ef5e6_dec62c06-8316-11eb-814a-0050568ef5e6.jpg' },
     { id: 11, title: 'Мобі Дік, або Білий кит', author: 'Герман Мелвілл', category: 'Classic', description: 'Епічна історія капітана Ахава, одержимого ідеєю вбити білого кита Мобі Діка. Глибока метафора про одержимість.', price: 200, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/a/f/af425e64-8fbb-11e6-80c0-000c29ae1566_84463edd-b3f6-11ef-81b5-005056857596.jpg' },
     { id: 12, title: 'Війна і мир', author: 'Лев Толстой', category: 'Classic', description: 'Епічний роман про епоху наполеонівських війн через призму життя кількох аристократичних родин. Центральний герой - П\'єр Безухий.', price: 300, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/c/b/cb8d512c-f651-11ee-8199-005056857596_a810550b-03e1-11f0-81bb-005056857596.jpg' },
@@ -29,7 +28,7 @@ export class BooksService {
     { id: 20, title: 'Загублена', author: 'Ґілліан Флінн', category: 'Mystery', description: 'Психологічний трилер про Аміну Грей, яка зникає з власного дому. Тримає в напрузі до самого фіналу.', price: 195, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/8/7/87e49f68-933f-11ed-8178-0050568ef5e6_b244bc77-933f-11ed-8178-0050568ef5e6.jpg' },
     { id: 21, title: 'Сяйво', author: 'Стівен Кінг', category: 'Fiction', description: 'Містичний хорор про родину Торранс, яка переїжджає працювати охоронцями у великий готель на зиму. Про древнє зло в готелі.', price: 210, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/c/e/ce5f2714-9074-11e6-80c0-000c29ae1566_c3894431-1490-11ed-8173-0050568ef5e6.jpg' },
     { id: 22, title: 'Воно', author: 'Стівен Кінг', category: 'Fiction', description: 'Хорор про древнє зло, що живе в маленькому містечку Деррі і з\'являється кожні 27 років. Про дитячі страхи.', price: 280, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/a/c/ac5fa8bc-df4f-11f0-91d5-005056b02ec0_63a1f2c9-1d44-11f1-91dd-005056b02ec0.jpg' },
-    { id: 23, title: 'Протистояння', author: 'Стівен Кінг', category: 'Fiction', description: 'Постапокаліптичний роман про епідемію, що знищує 99% людства. Про віру, надію та боротьбу добра і зла.', price: 300, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/6/b/6b337a9e-2fd8-11f0-81bb-005056857596_b1aefb26-2fdc-11f0-81bb-005056857596.jpg' },
+    { id: 23, title: 'Протистояння', author: 'Стівен Кінг', category: 'Fiction', description: 'Постапокаліптичний роман про епідемію, що знищує 99% людства. Про віру, надію та боротьбу добра і зла.', price: 300, imageUrl: 'https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/i/m/img028_1_37.jpg' },
     { id: 24, title: 'Дорога', author: 'Кормак Маккарті', category: 'Fiction', description: 'Постапокаліптична історія про батька та сина, які йдуть південною дорогою. Про батьківську любов і збереження людяності.', price: 170, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/e/9/e9d4cb06-92dd-11f0-81c1-005056b0789c_7a014d2a-92df-11f0-81c1-005056b0789c.jpg' },
     { id: 25, title: 'Крадійка книжок', author: 'Маркус Зузак', category: 'Fiction', description: 'Історія дівчинки Лілі в нацистській Німеччині. Про дружбу, мужність та силу літератури.', price: 185, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/7/b/7b29b22f-acd0-11eb-814a-0050568ef5e6_5ca2f434-acd1-11eb-814a-0050568ef5e6.jpg' },
     { id: 26, title: 'Голодні ігри', author: 'Сюзанна Коллінз', category: 'Sci-Fi', description: 'Дистопія про державу Панем, яка щорічно проводить смертельні змагання. Кетніс стає символом повстання.', price: 200, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/2/b/2b46847c-a00e-11ee-8190-00505684ea69_3d4a40c8-a010-11ee-8190-00505684ea69.jpg' },
@@ -49,10 +48,6 @@ export class BooksService {
     { id: 40, title: 'Собака Баскервілів', author: 'Артур Конан Дойл', category: 'Mystery', description: 'Класичний детектив з Шерлоком Холмсом. Про легенду про чудовисько на болоті. Класика жанру.', price: 165, imageUrl: 'https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/3/0/30968af0-e2d8-11ef-81b7-005056857596_3542c76e-e2d9-11ef-81b7-005056857596.jpg' },
   ];
   private idCounter = 41;
-=======
-  private books: Book[] = [];
-  private idCounter = 1;
->>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
 
   findAll(category?: string): Book[] {
     if (category) {
@@ -75,21 +70,15 @@ export class BooksService {
 
   update(id: number, data: UpdateBookDto): Book {
     const book = this.findOne(id);
-<<<<<<< HEAD
+    
     // Оновлюємо тільки ті поля, які передані
     if (data.title) book.title = data.title;
     if (data.author) book.author = data.author;
     if (data.category) book.category = data.category;
     if (data.description) book.description = data.description;
     if (data.price) book.price = data.price;
-=======
+    if (data.imageUrl) book.imageUrl = data.imageUrl;
     
-    // Оновлюємо тільки ті поля, які передані
-    if (data.title) book.title = data.title;
-    if (data.description) book.description = data.description;
-    if (data.price) book.price = data.price;
-    
->>>>>>> 51097eff79b97f85eceec75cbc29f6534d4e557b
     return book;
   }
 
